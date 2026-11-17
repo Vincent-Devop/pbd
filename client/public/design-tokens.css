@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+
+  /* Palette from the specified version e7d49faf960bf0b17214cd42b976430d0309a485. */
+  --brand-50: #FBF8FF;
+  --brand-100: #F3EFF9;
+  --brand-200: #ECE4F6;
+  --brand-300: #E1D5F0;
+  --brand-400: #D8C7EB;
+  --brand-500: #B794DC;
+  --brand-600: #512487;
+  --brand-700: #351655;
+  --brand-800: #30144F;
+  --brand-900: #241335;
+
+  /* Lavender surfaces and plum foregrounds from the specified version. */
+  --background: #F3EFF9;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-secondary: #EAE2F3;
+  --surface-muted: #EEE7F7;
+  --text-primary: #28183A;
+  --text-secondary: #493858;
+  --text-muted: #594A67;
+  --text-inverse: #FBF8FF;
+  --border: #887797;
+  --border-strong: #806D90;
+  --control-border: #887797;
+  --control-border-hover: #351655;
+  --focus-ring: #512487;
+  --action-primary: #512487;
+  --action-primary-hover: #351655;
+  --action-primary-active: #30144F;
+
+  /* Semantic states remain distinct from the brand palette. */
+  --success: #18794E;
+  --success-surface: #EDF7F1;
+  --warning: #946200;
+  --warning-surface: #FBF5E7;
+  --error: #B42335;
+  --error-surface: #FEF1F2;
+  --information: #2457A7;
+  --information-surface: #EEF4FF;
+
+  /* Font families from the specified version. */
+  --font-body-family: "Inter Variable", Inter, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-mono-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-size-base: 16px;
+  --font-size-caption: 13px;
+  --font-size-small: 14px;
+  --font-size-subheading: 22px;
+  --font-size-heading: clamp(28px, 3.2vw, 36px);
+  --font-size-display: clamp(44px, 5.2vw, 60px);
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.6;
+
+  /* 4px spacing scale. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Component radii. */
+  --radii-small: 6px;
+  --radii-control: 10px;
+  --radii-card: 16px;
+  --radii-panel: 20px;
+  --radii-pill: 999px;
+
+  /* Readable translucent surfaces and plum-tinted overlays. */
+  --glass-light: rgba(255, 255, 255, 0.72);
+  --glass-medium: rgba(255, 255, 255, 0.82);
+  --glass-strong: rgba(255, 255, 255, 0.94);
+  --glass-border: rgba(255, 255, 255, 0.82);
+  --glass-blur: 16px;
+  --glass-blur-heavy: 24px;
+  --surface-overlay: rgba(36, 19, 53, 0.66);
+  --surface-overlay-strong: rgba(36, 19, 53, 0.82);
+  --surface-hero-scrim: linear-gradient(0deg, rgba(36, 19, 53, 0.62), transparent 34%);
+  --shadow-text: 0 1px 3px rgba(36, 19, 53, 0.45);
+
+  /* Keep current elevation geometry, with the specified version's purple shadow hue. */
+  --shadow-small: 0 2px 8px rgba(49, 28, 75, 0.06);
+  --shadow-medium: 0 6px 20px rgba(49, 28, 75, 0.09);
+  --shadow-large: 0 12px 32px rgba(49, 28, 75, 0.12);
+  --shadow-glass-level: 0 8px 30px rgba(81, 36, 135, 0.12);
+  --shadow-topbar: 0 5px 20px rgba(49, 28, 75, 0.05);
+  --shadow-ops-card: 0 4px 14px rgba(49, 28, 75, 0.05);
+  --shadow-drawer: -16px 0 48px rgba(36, 19, 53, 0.24);
+  --shadow-button-hover: 0 7px 18px rgba(49, 28, 75, 0.14);
+
+  /* Interaction, motion and layout. */
+  --motion-standard: 180ms;
+  --motion-hover: 200ms;
+  --motion-modal: 220ms;
+  --motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --focus-width: 3px;
+  --focus-offset: 3px;
+  --touch-target-min: 44px;
+  --content-max-width: 1440px;
+  --breakpoint-mobile-min: 320px;
+  --breakpoint-mobile-max: 479px;
+  --breakpoint-large-mobile-min: 480px;
+  --breakpoint-large-mobile-max: 639px;
+  --breakpoint-tablet-min: 640px;
+  --breakpoint-tablet-max: 767px;
+  --breakpoint-small-desktop-min: 768px;
+  --breakpoint-small-desktop-max: 1023px;
+  --breakpoint-desktop-min: 1024px;
+  --breakpoint-desktop-max: 1279px;
+  --breakpoint-large-desktop-min: 1280px;
+
+  /* Compatibility aliases for the existing storefront and operations CSS. */
+  --lavender: var(--background);
+  --lavender-deep: var(--surface-secondary);
+  --surface-solid: var(--surface);
+  --paper: var(--background);
+  --paper-dark: var(--surface-secondary);
+  --ink: var(--text-primary);
+  --muted: var(--text-muted);
+  --muted-strong: var(--text-secondary);
+  --purple: #512487;
+  --purple-deep: #351655;
+  --purple-soft: #ECE4F6;
+  --purple-wash: #E1D5F0;
+  --line: #887797;
+  --line-soft: #887797;
+  --on-dark: var(--text-inverse);
+  --serif: var(--font-display-family);
+  --sans: var(--font-body-family);
+  --radius: var(--radii-card);
+  --shadow-soft: var(--shadow-medium);
+  --shadow-card: var(--shadow-small);
+}

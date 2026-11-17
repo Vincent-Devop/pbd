@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#512487" />
+    <link rel="icon" type="image/png" href="/prince-benja-designs-logo.png" />
+    <link rel="apple-touch-icon" href="/prince-benja-designs-logo.png" />
+    <link rel="stylesheet" href="/design-tokens.css" />
+    <title>Sample data editor — PRINCE BENJA DESIGNS</title>
+    <meta name="description" content="Admin workspace for editing page, product, and operations sample records saved in isolated Neon Development staging." />
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      body{margin:0;background:var(--background);color:var(--text-primary);font:400 16px/1.6 var(--font-body-family);-webkit-font-smoothing:antialiased}
+      .initial-content{max-width:980px;min-height:100vh;margin:0 auto;padding:42px clamp(20px,7vw,80px) 52px;color:var(--text-primary)}
+      .initial-logo{width:96px;height:93px;object-fit:contain;margin:0 0 18px}
+      .initial-eyebrow{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary)}
+      .initial-content h1{max-width:780px;margin:12px 0;color:var(--brand-900);font-family:var(--font-display-family);font-size:clamp(36px,5.2vw,56px);font-weight:650;line-height:1.12}
+      .initial-content p{max-width:720px;font-size:17px;line-height:1.7}
+      .initial-note{margin:22px 0;padding:16px 18px;border:1px solid var(--control-border);border-radius:var(--radii-control);background:var(--glass-strong);color:var(--brand-900);font-size:16px}
+      .initial-content a{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;border:1px solid var(--brand-700);border-radius:var(--radii-control);background:var(--surface);color:var(--brand-900);font-size:16px;font-weight:700;text-decoration:none}
+      .initial-content a:hover{background:var(--brand-50)}
+      .initial-content a:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+    </style>
+  </head>
+  <body>
+    <main class="initial-content" id="static-ops-content" aria-labelledby="ops-loading-title">
+      <img class="initial-logo" src="/prince-benja-designs-logo.png" alt="PRINCE BENJA DESIGNS logo" width="1054" height="1021" />
+      <span class="initial-eyebrow">PRINCE BENJA DESIGNS · ADMIN WORKSPACE</span>
+      <h1 id="ops-loading-title">Sample data editor</h1>
+      <p>Sign in with administrator access to edit sample page, product, and operations records stored in the isolated Neon Development database.</p>
+      <p class="initial-note">This workspace does not connect to the live production database or change stock, orders, payments, or customer records.</p>
+      <p><a href="/">Return to the storefront</a></p>
+      <noscript><p>JavaScript is required to use the editor. The stored records are not shown on this static page.</p></noscript>
+    </main>
+    <div id="root"></div>
+    <script src="/api/platform/config.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

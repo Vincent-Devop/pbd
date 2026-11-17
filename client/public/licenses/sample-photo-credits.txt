@@ -1,0 +1,17 @@
+Local sample photo credits
+
+These are sample images and do not depict confirmed store inventory.
+
+- product-suitcase.jpg: "Belber Striped Suitcase" by Sandrine Z, CC BY-SA 4.0.
+  https://commons.wikimedia.org/wiki/File:Belber_Striped_Suitcase.jpg
+  This rendition is distributed under the same license.
+- product-weekender.jpg: "Leather duffel bag on the ground" by Harsh Jadav, CC0.
+  https://commons.wikimedia.org/wiki/File:Leather_duffel_bag_on_the_ground_(Unsplash).jpg
+- product-packing-set.jpg: "Packing for a business trip" by Angelina Litvin, CC0.
+  https://commons.wikimedia.org/wiki/File:Packing_for_a_business_trip_(Unsplash).jpg
+- story-travel-planning.jpg: "Planning for the weekend" by Annie Spratt, CC0.
+  https://commons.wikimedia.org/wiki/File:Planning_for_the_weekend_(Unsplash).jpg
+- product-backpack.jpg: Unsplash photo, https://images.unsplash.com/photo-1553062407-98eeb64c6a62
+- hero-luggage.jpg: Pexels photo 1008155, under the Pexels license:
+  https://www.pexels.com/license/
+  https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg
