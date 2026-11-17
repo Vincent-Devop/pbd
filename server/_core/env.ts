@@ -1,4 +1,4 @@
-// Platform values are read at use time. See the Webdev service/authentication skills.
+// Platform values are read at use time. Runtime secrets are never exposed to the browser.
 export const ENV = {
   get appId() { return process.env.MANUS_PROJECT_ID ?? ""; },
   get cookieSecret() { return process.env.MANUS_JWT_SECRET ?? ""; },
@@ -6,8 +6,11 @@ export const ENV = {
     if (process.env.NODE_ENV !== "development") return "";
     return process.env.PBD_NEON_DEV_STAGING_DATABASE_URL ?? "";
   },
+  get neonProductionDatabaseUrl() {
+    if (process.env.NODE_ENV !== "production") return "";
+    return process.env.DATABASE_URL ?? "";
+  },
   get oAuthServerUrl() { return process.env.MANUS_OAUTH_API_URL ?? ""; },
-  // Preserve the legacy hint when supplied; otherwise roles remain application data.
   get ownerOpenId() { return process.env.OWNER_OPEN_ID ?? ""; },
   get isProduction() { return process.env.NODE_ENV === "production"; },
   get forgeApiUrl() { return process.env.MANUS_API_URL ?? ""; },
