@@ -4,7 +4,10 @@ import { drizzle } from "drizzle-orm/neon-http";
 import * as schema from "../drizzle/schema";
 import type { InsertUser } from "../drizzle/schema";
 import { ENV } from "./_core/env";
-import { assertNeonDevStagingConnectionString } from "./dbSafety";
+import {
+  assertNeonDevStagingConnectionString,
+  assertNeonProductionConnectionString,
+} from "./dbSafety";
 
 function createDatabase(connectionString: string) {
   return drizzle({ client: neon(connectionString), schema });
@@ -13,17 +16,28 @@ function createDatabase(connectionString: string) {
 type Database = ReturnType<typeof createDatabase>;
 let _db: Database | null = null;
 
-// This adapter deliberately ignores DATABASE_URL and is unavailable outside Development.
 export async function getDb(): Promise<Database | null> {
-  const connectionString = ENV.neonStagingDatabaseUrl;
-  if (process.env.NODE_ENV !== "development" || !connectionString) return null;
+  const environment = process.env.NODE_ENV;
+  if (environment !== "development" && environment !== "production") return null;
+
+  const connectionString =
+    environment === "development"
+      ? ENV.neonStagingDatabaseUrl
+      : ENV.neonProductionDatabaseUrl;
+
+  if (!connectionString) return null;
   if (_db) return _db;
 
   try {
-    _db = createDatabase(assertNeonDevStagingConnectionString(connectionString));
+    const safeConnectionString =
+      environment === "development"
+        ? assertNeonDevStagingConnectionString(connectionString)
+        : assertNeonProductionConnectionString(connectionString);
+
+    _db = createDatabase(safeConnectionString);
     return _db;
-  } catch {
-    console.warn("[Database] Could not initialize the Development-only Neon adapter.");
+  } catch (error) {
+    console.error("[Database] Could not initialize the configured database:", error);
     return null;
   }
 }
@@ -32,7 +46,7 @@ export async function upsertUser(user: InsertUser): Promise<void> {
   if (!user.openId) throw new Error("User openId is required for upsert");
 
   const db = await getDb();
-  if (!db) throw new Error("Development Neon staging database is not available");
+  if (!db) throw new Error("Database is not configured for this environment");
 
   const values: InsertUser = { openId: user.openId };
   const updateSet: Partial<InsertUser> = {};
